@@ -1,0 +1,250 @@
+/* Add a black background color to the top navigation */
+* {
+    font-family: Trebuchet MS;
+}
+
+.container{
+    margin-top: 7%;
+}
+h1 {
+    color: #111;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-align: center;
+}
+h3 {
+    color: #111;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-align: center;
+}
+.topnav {
+    font-size: 16px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    background-color: #333;
+}
+
+
+.badge {
+    padding: 0 8px;
+    background: #333333;
+    color: #e7ffef;
+    border-radius: 50px;
+}
+
+.topnav a.logo-image{
+    background-image: url(images/logo.png);
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: auto;
+    width: 100px;
+    margin-left: 1.5%;
+    margin-right: 60%;
+}
+/* Style the links inside the navigation bar */
+.topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+    border-radius: 15px;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+    border-radius: 15px;
+}
+
+.table-content {
+    width: 100%;
+    margin-bottom: 3%;
+}
+
+.table-content td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 15px;
+}
+
+.table-content tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.table-content tr:hover {
+    background-color: #ddd;
+}
+
+.table-content th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+.row {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+    text-align: center;
+    padding: 3%;
+    flex: 40%;
+}
+
+.servicecolumn {
+    background: #e7ffef;
+    border-radius: 30px;
+    text-align: center;
+    padding: 10%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    flex: 30%
+}
+
+.general {
+    text-align: justify;
+    padding: 4%;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #f2f2f2;
+}
+footer .a{
+    color: #04AA6D;
+}
+
+.blog-list {
+    margintop: 10%;
+    margin-bottom: 2%;
+    padding: .3rem;
+    background-color: #eee;
+    border-radius: 20px;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+.blog-list > h1,
+.blog-details {
+    margin: .5rem;
+    padding: .3rem;
+    font-size: 1.2rem;
+}
+
+.blog-details > h2,
+.blog-details > p {
+    margin: .2rem;
+    font-size: 1rem;
+}
+
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.form-container {
+    border-radius: 30px;
+    background-color: #f2f2f2;
+    padding: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-right: 4rem;
+    margin-left: 4rem;
+}
+
+@media (max-width: 1000px) {
+    .topnav {
+        flex-direction: column;
+    }
+    .topnav .a {
+        padding: 0px 0px;
+    }
+    .container {
+        margin-top: 60%;
+    }
+
+    .row{
+        padding: 0;
+        margin: 0;
+    }
+
+    .column{
+        padding: 1%;
+    }
+
+    .servicecolumn{
+        flex-direction: column;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+    }
+
+    .servicerow {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .topnav {
+        flex-direction: column;
+    }
+    .topnav .a {
+        padding: 0px 0px;
+    }
+    .container {
+        margin-top: 100%;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .servicecolumn{
+        flex-direction: column;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}

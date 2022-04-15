@@ -6,7 +6,7 @@ document.getElementById("locationForm").addEventListener('submit', function (eve
     var location = document.getElementById('location').value;
     var ourRequest = new XMLHttpRequest();
 
-    ourRequest.open('GET', 'https://api.teleport.org/api/cities/?search=' + location);
+    ourRequest.open('GET', `https://api.teleport.org/api/cities/?search=${location}`);
     ourRequest.onload = function() {
         if (ourRequest.status >= 200 && ourRequest.status < 400) {
             var ourData = JSON.parse(ourRequest.responseText);
@@ -26,9 +26,9 @@ document.getElementById("locationForm").addEventListener('submit', function (eve
 });
 
 function renderHTML(location, data) {
-    htmlString = "<li>" + location + "</li>" + "<ul>";
+    htmlString = `<li> ${location} </li> <ul>`;
     for (i = 0; i < data.length; i++) {
-        htmlString += "<li>" + data[i].matching_full_name + '.</li>';
+        htmlString += `<li> ${data[i].matching_full_name} .</li>`;
     }
     htmlString += "</ul>";
     citiesList.innerHTML = htmlString;

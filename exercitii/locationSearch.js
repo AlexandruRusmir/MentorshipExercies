@@ -31,5 +31,5 @@ function renderHTML(location, data) {
         htmlString += "<li>" + data[i].matching_full_name + '.</li>';
     }
     htmlString += "</ul>";
-    citiesList.insertAdjacentHTML('beforeend', htmlString);
+    citiesList.innerHTML = htmlString;
 }

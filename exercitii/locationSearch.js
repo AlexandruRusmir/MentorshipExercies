@@ -31,19 +31,22 @@ function renderLocations(data) {
     htmlString = ``;
     let cityResult;
     for (i = 0; i < data.length; i++) {
-        cityResult = `<li><a href="#" data-result="${data[i].matching_full_name}">
+        cityResult = `<li><a href="#">
             ${data[i].matching_full_name}</a></li>`
 
         cityResult = createElementFromHTML(cityResult);
+        cityResult.firstChild.result = data[i].matching_full_name;
+
         cityResult.addEventListener("click", cityClick)
         citiesList.appendChild(cityResult);
     }
 }
 
 function cityClick(event){
+    console.log(event.target);
     event.preventDefault();
-    const cityLoc = event.target.dataset.result;
-
+    const cityLoc = event.target.result;
+    console.log(cityLoc);
     sendSecondRequest(cityLoc);
 }
 

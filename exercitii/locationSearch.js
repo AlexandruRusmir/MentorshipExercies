@@ -53,12 +53,13 @@ function sendSecondRequest(location) {
     location = location.split(",")[0];
     ourRequest.open('GET', `https://app.ticketmaster.com/discovery/v2/events.json?apikey=w8q21bNiAWHNHCdv54UVmGasu5b3OWC6&keyword=${location}`);
     ourRequest.onload = function() {
-        if (ourRequest.status >= 200 && ourRequest.status < 400) {
-            var ourData = JSON.parse(ourRequest.responseText);
-            renderEvents(ourData._embedded.events);
-        } else {
+        if (ourRequest.status < 200 || ourRequest.status > 400) {
             console.log("We connected to the server, but it returned an error.");
+            return;
         }
+
+        let ourData = JSON.parse(ourRequest.responseText);
+        renderEvents(ourData?._embedded?.events);
     };
 
     ourRequest.onerror = function() {
@@ -69,8 +70,18 @@ function sendSecondRequest(location) {
 }
 
 function renderEvents(data) {
+    if(!data){
+        alert("Unpopular location! No events here.");
+        return;
+    }
+
     htmlString = ``;
     let eventResult;
+
+    //console.log(typeof data);
+    //console.log(data instanceof Array);
+    //console.log(typeof data === "object");
+
     for (i = 0; i < data.length; i++) {
         eventResult = `<li><p>${data[i].name}</p></li>`
         eventResult = createElementFromHTML(eventResult);
@@ -79,8 +90,19 @@ function renderEvents(data) {
 }
 
 function createElementFromHTML(htmlString) {
-    var div = document.createElement('div');
+    let div = document.createElement('div');
     div.innerHTML = htmlString;
-
     return div.firstChild;
 }
+
+//return a<b ? 1 : 2;
+
+//x ?: y <=> x?x:y;
+
+//return a<b ? (b<c? 2 : 3) : 1;
+
+//if variable is falsy: a ?? b ?? c ?? null;
+
+//object?.property?.property?.property;
+
+// check if something is undefined with obje == undefined

@@ -2,36 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Home</title>
 </head>
 <body>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#"><img src="images/logo.png" style="width: 100px; height: auto" ></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item custom-active px-3">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="locations.html">Locations</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <?php
+            require "header.php";
+        ?>
 
         <div class="container">
             <div class="row">
@@ -44,10 +22,12 @@
 
             <div class="row pt-5 pb-3">
                 <div class="col-md p-5">
-                    <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat dapibus condimentum. Nullam ornare pulvinar tellus, quis faucibus lacus finibus.</em>
+                    <?php
+                        echo "<em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat dapibus condimentum. Nullam ornare pulvinar tellus, quis faucibus lacus finibus.</em>";
+                    ?>
                 </div>
                 <div class="col-md">
-                    <img style="width: 100%; height: auto;" src="images/static_website.svg" alt="Static website picture">
+                    <img style="width: 100%; height: auto;" src="../styles/images/static_website.svg" alt="Static website picture">
                 </div>
             </div>
 
@@ -57,10 +37,11 @@
                         General information
                     </h3>
                 </div>
-
-                <p>
+                <?php
+                    echo "<p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices purus nisl, quis tincidunt mauris tempus eu. Integer auctor justo nisl, nec vestibulum massa commodo sed. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus convallis placerat rutrum. Pellentesque nec iaculis nibh. In ut neque lorem. Vestibulum orci tortor, laoreet viverra tempus in, bibendum in sem. Fusce vitae lobortis tortor, condimentum pretium massa.
-                </p>
+                </p>";
+                ?>
                 <p>
                     Quisque quis congue nulla. Vestibulum lobortis orci vel est cursus pretium. Praesent ultricies interdum imperdiet. Nullam ornare mattis maximus. Maecenas laoreet eu arcu at tincidunt. Praesent dui quam, sagittis vel feugiat in, facilisis at enim. Nullam id ultrices felis. Nullam id rutrum arcu, fringilla viverra ipsum. Aliquam iaculis sem quis quam tempus, non viverra nisl malesuada. Donec accumsan libero quis lectus hendrerit, vitae cursus mauris rhoncus. Fusce suscipit, ligula in hendrerit aliquet, risus neque placerat magna, ac pulvinar elit tellus at magna.
                 </p>
@@ -123,17 +104,14 @@
             </table>
         </div>
 
-        <footer>
-            <address>
-                Written by <em>Alex Rusmir</em>.<br>
-                Timisoara, Romania
-            </address>
-        </footer>
+        <?php
+            include "footer.php";
+        ?>
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-        <script src="popup.js" defer></script>
+        <script src="../js/popup.js" defer></script>
 </body>
 </html>

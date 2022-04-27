@@ -8,9 +8,9 @@
         $lname = $_POST['lastname'];
         $country = $_POST['country'];
 
-        if($input==="noice") {
+        if($input === "noice") {
             $message = '<div class="row p-5">
-                            <iframe src="https://giphy.com/embed/xF2YGkO6UMagU" width="200" height="auto" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/weird-that-70s-show-xF2YGkO6UMagU">via GIPHY</a></p>
+                            <iframe src="https://giphy.com/embed/xF2YGkO6UMagU" width="200" height="auto" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/weird-that-70s-show-xF2YGkO6UMagU" target="_blank">via GIPHY</a></p>
                         </div>';
         }
     }
@@ -61,7 +61,7 @@
                 <input type="submit" name="sendFormButton" class="btn btn-success px-4 mx-4"/>
 
                 <?php
-                    echo $message??"";
+                    echo $message ?? "";
                 ?>
 
             </form>

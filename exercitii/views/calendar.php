@@ -81,43 +81,62 @@
     <link href="../styles/css/calendarStyle.css" rel="stylesheet">
     <link href="../styles/css/style.css" rel="stylesheet">
 </head>
-<body>
-    <?php
-        require "header.php";
-    ?>
+    <body>
+        <?php
+            require "header.php";
+        ?>
 
-    <div class="container">
-        <ul class="list-inline">
-            <li class="list-inline-item"><a href="?ym=<?= $prev; ?>" class="btn btn-success">&lt; prev</a></li>
-            <li class="list-inline-item"><span class="title"><?= $title; ?></span></li>
-            <li class="list-inline-item"><a href="?ym=<?= $next; ?>" class="btn btn-success">next &gt;</a></li>
-        </ul>
+        <div class="container">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="?ym=<?= $prev; ?>" class="btn btn-success">&lt; prev</a></li>
+                <li class="list-inline-item"><span class="title"><?= $title; ?></span></li>
+                <li class="list-inline-item"><a href="?ym=<?= $next; ?>" class="btn btn-success">next &gt;</a></li>
+            </ul>
 
-        <p class="text-right"><a href="calendar.php">Today Date</a></p>
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th>L</th>
-                <th>M</th>
-                <th>M</th>
-                <th>J</th>
-                <th>V</th>
-                <th>S</th>
-                <th>D</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-                foreach ($weeks as $week) {
-                    echo $week;
-            }
-            ?>
-            </tbody>
-        </table>
-    </div>
+            <p class="text-right"><a href="calendar.php">Today Date</a></p>
 
-    <?php
-        include "footer.php";
-    ?>
-</body>
+            <select id="yearsSelect">
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022" selected="selected">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+            </select>
+
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>L</th>
+                    <th>M</th>
+                    <th>M</th>
+                    <th>J</th>
+                    <th>V</th>
+                    <th>S</th>
+                    <th>D</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                    foreach ($weeks as $week) {
+                        echo $week;
+                }
+                ?>
+                </tbody>
+            </table>
+        </div>
+
+        <?php
+            include "footer.php";
+        ?>
+    </body>
+
+<script src="../js/calendarYear.js" defer></script>
 </html>

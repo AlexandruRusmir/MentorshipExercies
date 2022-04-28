@@ -1,24 +1,11 @@
 <?php
 include_once "help/helpers.php";
 
-$fileContent = '';
-$message = '';
-
-if (isset($_POST['submit'])) {
+$modifiedPage = '';
+if (isset($_POST['submit']))
+{
     $input = $_FILES['filename']['tmp_name'];
-    if($input)
-    {
-        try
-        {
-            $message = readFromFile($input);
-            appendToFile('message', $input);
-            curlPostContent(array($input),"http://localhost/MentorshipExerciseees/exercitii/views/fileReceive.php");
-            #header("Location: fileReceive.php");
-        }
-        catch (Exception $e) {
-            $e->getMessage(). 'in file' . $e->getFile() . 'on line' . $e->getLine();
-        }
-    }
+    $modifiedPage = curlPostContent(array("path" => $input),"http://localhost/MentorshipExerciseees/exercitii/views/fileReceive.php");
 }
 ?>
 
@@ -48,8 +35,9 @@ if (isset($_POST['submit'])) {
                 <br>
                 <input type="submit" name='submit' class="btn btn-success px-5 mt-5 mb-3"/>
             </form>
+
             <?php
-                echo $message;
+                echo $modifiedPage;
             ?>
         </div>
     </div>

@@ -71,14 +71,6 @@
         return $output;
     }
 
-    function appendToFile(string $content, string $filePath)
-    {
-        chmod($filePath, 0666);
-        $myfile = fopen($filePath, "a") or die("Unable to open file!");
-        fwrite($myfile, $content);
-        fclose($myfile);
-    }
-
     function readFromFile(string $filePath)
     {
         $myfile = fopen($filePath, "r") or die("Unable to open file!");
@@ -88,4 +80,12 @@
         return $message;
     }
 
+    function appendToFile(string $content, string $filePath)
+    {
+        $myfile = fopen($filePath, "a+") or die("Unable to open file!");
+        fwrite($myfile, $content);
+        fclose($myfile);
+
+        return readFromFile($filePath);
+    }
 ?>

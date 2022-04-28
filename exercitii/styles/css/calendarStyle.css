@@ -1,0 +1,25 @@
+.container {
+    font-family: Trebuchet MS;
+    margin: 100px auto;
+}
+.list-inline {
+    text-align: center;
+    margin: 30px;
+}
+.title {
+    font-weight: bold;
+    font-size: 26px;
+}
+th {
+    text-align: center;
+}
+td {
+    height: 75px;
+}
+th:nth-of-type(6), td:nth-of-type(6), th:nth-of-type(7), td:nth-of-type(7) {
+    color: #ff0000;
+}
+
+.today {
+    background-color: ghostwhite;
+}

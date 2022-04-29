@@ -25,10 +25,14 @@
                 <li class="nav-item">
                     <a class="nav-link ' . addStyleToCurrentPage($currentPage, "locations.php", NAV_LINK_ACTIVE_CSS_CLASS) . '" href="locations.php">Locations</a>
                 </li>
-                <li class="nav-item" id="lastNavItemElement">
+                <li class="nav-item">
                     <a class="nav-link ' . addStyleToCurrentPage($currentPage, "calendar.php", NAV_LINK_ACTIVE_CSS_CLASS) . '" href="calendar.php">Calendar</a>
+                </li>
+                <li class="nav-item" id="lastNavItemElement">
+                    <a class="nav-link ' . addStyleToCurrentPage($currentPage, "fileForm.php", NAV_LINK_ACTIVE_CSS_CLASS) . '" href="fileForm.php">File Work</a>
                 </li>'
-                . addPageToHeaderIfItIsCurrentPage($currentPage, "easterEggPage.php", "Easter Egg Page") .'
+                . addPageToHeaderIfItIsCurrentPage($currentPage, "easterEggPage.php", "Easter Egg Page")
+                . addPageToHeaderIfItIsCurrentPage($currentPage, "fileReceive.php", "File Receive") .'
             </ul>
         </div>
     </nav>';

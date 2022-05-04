@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name":"Bread",
+    "price":3,
+    "quantity":73,
+    "pictureURL":"https://assets.bonappetit.com/photos/5c62e4a3e81bbf522a9579ce/5:4/w_2815,h_2252,c_limit/milk-bread.jpg"
+  },
+  {
+    "id": 2,
+    "name":"Pickled Cucumbers",
+    "price":7.68,
+    "quantity":24,
+    "pictureURL":"https://img.21food.com/20110609/product/1306744482588.jpg"
+  }
+]

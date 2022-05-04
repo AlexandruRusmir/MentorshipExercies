@@ -57,7 +57,7 @@
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt(CURLOPT_HEADER, 0);
+        curl_setopt($ch,CURLOPT_HEADER, 0);
 
         $output = curl_exec($ch);
 
@@ -88,4 +88,64 @@
 
         return readFromFile($filePath);
     }
+
+    function addUserToJSON(string $name, string $email, string $password, string $path, $currentArray)
+    {
+        $user = (object) array('name' => $name, 'email' => $email, 'password' => $password,
+            'id' => $currentArray!=null ? sizeof($currentArray)+1 : 1, 'role' => 'user');
+        if($currentArray)
+        {
+            array_push($currentArray, $user);
+        }
+        else
+        {
+            $currentArray = array($user);
+        }
+        $jsonData = json_encode($currentArray);
+        file_put_contents($path, $jsonData);
+    }
+
+    function addProductToJSON(string $name, int $price , int $quantity, string $pictureURL,string $path, array $currentArray)
+    {
+        $product = (object) array('id' => $currentArray!=null ? sizeof($currentArray)+1 : 1, 'name' => $name,
+            'price' => $price, 'quantity' => $quantity, 'pictureURL' => $pictureURL);
+
+        if($currentArray)
+        {
+            array_push($currentArray, $product);
+        }
+        else
+        {
+            $currentArray = array($product);
+        }
+        $jsonData = json_encode($currentArray);
+        file_put_contents($path, $jsonData);
+    }
+
+    function findIdByEmail(string $email, array $usersArray)
+    {
+        forEach ($usersArray as $user)
+        {
+            if($user->email == $email)
+                return $user->id;
+        }
+        return null;
+    }
+
+    function findUserById(string $id, array $usersArray)
+    {
+        forEach($usersArray as $user)
+        {
+            if($user->id == $id)
+                return $user;
+        }
+        return null;
+    }
+
+    function logout()
+    {
+        unset($_COOKIE['userID']);
+        return "";
+    }
+    //function handleUserLogin(string)
 ?>

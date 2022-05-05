@@ -34,12 +34,18 @@
                 <li class="nav-item">
                     <a class="nav-link ' . addStyleToCurrentPage($currentPage, "linkForm.php", NAV_LINK_ACTIVE_CSS_CLASS) . '" href="linkForm.php">Link work</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link ' . addStyleToCurrentPage($currentPage, "classPractice.php", NAV_LINK_ACTIVE_CSS_CLASS) . '" href="classPractice.php">Classes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ' . addStyleToCurrentPage($currentPage, "classPractice.php", NAV_LINK_ACTIVE_CSS_CLASS) . '" href="../mvc/index.php">MVC Practice</a>
+                </li>
                 <li class="nav-item" id="lastNavItemElement">
                     <a class="nav-link ' . addStyleToCurrentPage($currentPage, "loginPage.php", NAV_LINK_ACTIVE_CSS_CLASS) . '" href="loginPage.php">Shop</a>
                 </li>'
                 . addPageToHeaderIfItIsCurrentPage($currentPage, "easterEggPage.php", "Easter Egg Page")
                 . addPageToHeaderIfItIsCurrentPage($currentPage, "fileReceive.php", "File Receive")
-                . addPageToHeaderIfItIsCurrentPage($currentPage, "register.php", "Register Page") . '
+                . addPageToHeaderIfItIsCurrentPage($currentPage, "register.php", "Classes") . '
             </ul>
         </div>
     </nav>';

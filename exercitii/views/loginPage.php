@@ -1,5 +1,9 @@
 <?php
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 if(isset($_COOKIE['userID']))
 {
     header('Location: shopIndex.php');
@@ -34,11 +38,11 @@ if (isset($_POST['submit']))
                     {
                         if(isset($_POST['remember']))
                         {
-                            setcookie('userID', findIdByEmail($email, $receivedUsers), time() + (86400 * 14), "/");
+                            setcookie('userID', $user->id, time() + (86400 * 14), "/");
                         }
                         else
                         {
-                            setcookie('userID', findIdByEmail($email, $receivedUsers), time() + 3600, "/");
+                            setcookie('userID', $user->id, time() + 3600, "/");
                         }
                         header('Location: shopIndex.php');
                     }
@@ -91,7 +95,7 @@ require "header.php";
             <?php
                 echo $message;
             ?>
-            <input type="submit" name='submit' class="btn btn-success px-5 mt-3 mb-3"/>
+            <input type="submit" name='submit' style="margin: 0 auto" class="btn btn-success px-5 mt-3 mb-3"/>
         </form>
     </div>
 </div>

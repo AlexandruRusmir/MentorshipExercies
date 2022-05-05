@@ -1,4 +1,5 @@
 <?php
+
     define("NAV_LINK_ACTIVE_CSS_CLASS", "custom-active");
 
 
@@ -105,7 +106,7 @@
         file_put_contents($path, $jsonData);
     }
 
-    function addProductToJSON(string $name, int $price , int $quantity, string $pictureURL,string $path, array $currentArray)
+    function addProductToJSON(string $name, float $price , int $quantity, string $pictureURL,string $path, array $currentArray)
     {
         $product = (object) array('id' => $currentArray!=null ? sizeof($currentArray)+1 : 1, 'name' => $name,
             'price' => $price, 'quantity' => $quantity, 'pictureURL' => $pictureURL);
@@ -126,26 +127,26 @@
     {
         forEach ($usersArray as $user)
         {
+            $user->id +=100;
             if($user->email == $email)
                 return $user->id;
         }
         return null;
     }
 
-    function findUserById(string $id, array $usersArray)
+    function findELById(string $id, array $array)
     {
-        forEach($usersArray as $user)
+        forEach($array as $el)
         {
-            if($user->id == $id)
-                return $user;
+            if($el->id == $id)
+                return $el;
         }
         return null;
     }
 
     function logout()
     {
-        unset($_COOKIE['userID']);
+        setcookie('userID', '', time() - (86400 * 14), "/");
         return "";
     }
-    //function handleUserLogin(string)
 ?>

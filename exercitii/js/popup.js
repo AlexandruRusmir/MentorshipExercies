@@ -10,7 +10,7 @@ document.body.addEventListener("mouseout", function (){
 
 window.addEventListener('scroll',function(e) {
     if(executed_50scroll === false)
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    if (document.body.scrollTop > document.body.scrollHeight/2 || document.documentElement.scrollTop > document.body.scrollHeight/2) {
         alert("Displaying a pop-up");
         executed_50scroll = true;
     }
